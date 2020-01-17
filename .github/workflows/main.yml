@@ -24,6 +24,7 @@ jobs:
         git config --global user.name 'masachi'
         git config --global user.email 'zhangjb42@gmail.com'
         git commit -am "Build fresh lib with Github Actions"
+        git add -A
         git push origin v1.1.2
     - name: Sync Lib to Gitee
       run: |
