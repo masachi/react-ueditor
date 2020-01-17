@@ -28,5 +28,5 @@ jobs:
         git push origin v1.1.2
     - name: Sync Lib to Gitee
       run: |
-         git remote set-url origin https://x-access-token:${{ secrets.GITEE_ACCESS_TOKEN }}@gitee.com/masachi/react-ueditor
-         git push -f origin master
+         git remote set-url origin https://masachi:${{ secrets.GITEE_ACCESS_TOKEN }}@gitee.com/masachi/react-ueditor
+         git push -f origin v1.1.2
