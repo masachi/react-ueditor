@@ -15,7 +15,7 @@ jobs:
         node-version: '10.x'
     - name: Install Dependencies
       working-directory: .
-      run: npm install && npm install -g babel
+      run: npm install
     - name: Build fresh lib
       working-directory: .
       run: npm run build

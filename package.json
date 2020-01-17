@@ -12,6 +12,7 @@
   "deprecated": false,
   "description": "an ueditor component for react",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.2",
     "babel-loader": "^7.1.2",
