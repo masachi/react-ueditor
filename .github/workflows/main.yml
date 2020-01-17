@@ -26,6 +26,6 @@ jobs:
         git commit -am "Build fresh lib with Github Actions"
         git push origin v1.1.2
     - name: Sync Lib to Gitee
-       run: |
+      run: |
          git remote set-url origin https://x-access-token:${{ secrets.GITEE_ACCESS_TOKEN }}@gitee.com/masachi/react-ueditor
          git push -f origin master
