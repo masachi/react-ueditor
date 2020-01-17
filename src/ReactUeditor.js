@@ -254,7 +254,7 @@ class ReactUeditor extends React.Component {
     return (
       <div>
         <script id={this.containerID} name={this.containerID} type='text/plain' />
-        <input type='file' id={this.fileInputID} onChange={this.uploadImage} style={{visibility: 'hidden'}} />
+        <input type='file' id={this.fileInputID} onChange={this.uploadImage} style={{visibility: 'hidden'}} accept="image/*" />
         <UploadModal
           type='video'
           title='上传视频'
