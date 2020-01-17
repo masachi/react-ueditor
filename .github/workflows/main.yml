@@ -1,0 +1,24 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Install Dependencies
+      run: npm install
+    - name: Build fresh lib
+      run: npm run build
+    - name: Commit report
+      run: |
+        git config --global user.name 'masachi'
+        git config --global user.email 'zhangjb42@gmail.com'
+        git commit -am "Build fresh lib with Github Actions"
+        git push origin master
