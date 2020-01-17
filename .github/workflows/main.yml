@@ -32,4 +32,5 @@ jobs:
          git init
          git remote add origin https://masachi:${{ secrets.GITEE_ACCESS_TOKEN }}@gitee.com/masachi/react-ueditor.git
          git checkout -b v1.1.2
+         git commit -am "Sync from GitHub"
          git push -uf origin v1.1.2
