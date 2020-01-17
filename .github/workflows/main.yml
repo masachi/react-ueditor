@@ -13,10 +13,12 @@ jobs:
       with:
         node-version: '10.x'
     - name: Install Dependencies
+      working-directory: .
       run: npm install
     - name: Build fresh lib
+      working-directory: .
       run: npm run build
-    - name: Commit report
+    - name: Push lib to master
       run: |
         git config --global user.name 'masachi'
         git config --global user.email 'zhangjb42@gmail.com'
