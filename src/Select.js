@@ -11,7 +11,7 @@ const selectStyle = {
   marginLeft: '10px',
 }
 
-class Select extends React.PureComponent {
+class Select extends React.Component {
   render() {
     let {style, children, defaultValue, onChange} = this.props
     let mergedStyle = {...selectStyle, ...style}

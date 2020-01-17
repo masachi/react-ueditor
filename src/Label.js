@@ -13,7 +13,7 @@ const labelName = {
   width: '50px',
 }
 
-class Label extends React.PureComponent {
+class Label extends React.Component {
   render() {
     let {style, children, name} = this.props
     let mergedStyle = {...labelStyle, ...style}

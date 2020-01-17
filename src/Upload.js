@@ -3,7 +3,7 @@ import React from 'react'
 const uploadStyle = {
   height: '26px',
   width: '80px',
-  display: 'inline-block',
+  display: 'none',
   boxSizing: 'border-box',
   lineHeight: '25px',
   textAlign: 'center',
@@ -17,7 +17,7 @@ const uploadStyle = {
   marginLeft: '10px',
 }
 
-class Upload extends React.PureComponent {
+class Upload extends React.Component {
   onInputChange = e => {
     let props = this.props
     if (props.onChange) {

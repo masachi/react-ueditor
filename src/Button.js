@@ -11,7 +11,7 @@ const buttonStyle = {
   marginLeft: '10px',
 }
 
-class Button extends React.PureComponent {
+class Button extends React.Component {
   render() {
     let {style, children, onClick} = this.props
     let mergedStyle = {...buttonStyle, ...style}

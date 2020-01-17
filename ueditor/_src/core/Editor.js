@@ -332,8 +332,8 @@
          * ```
          */
         destroy: function () {
+
             var me = this;
-            if (!me.container) return
             me.fireEvent('destroy');
             var container = me.container.parentNode;
             var textarea = me.textarea;
@@ -344,8 +344,8 @@
                 textarea.style.display = ''
             }
 
-            textarea.style.width = me.iframe ? me.iframe.offsetWidth + 'px' : '0';
-            textarea.style.height = me.iframe ? me.iframe.offsetHeight + 'px' : '0';
+            textarea.style.width = me.iframe.offsetWidth + 'px';
+            textarea.style.height = me.iframe.offsetHeight + 'px';
             textarea.value = me.getContent();
             textarea.id = me.key;
             container.innerHTML = '';
@@ -727,8 +727,7 @@
                 return '';
             }
             me.fireEvent('beforegetcontent');
-            var html = me.body ? me.body.innerHTML : ''
-            var root = UE.htmlparser(html,ignoreBlank);
+            var root = UE.htmlparser(me.body.innerHTML,ignoreBlank);
             me.filterOutputRule(root);
             me.fireEvent('aftergetcontent', cmd,root);
             return  root.toHtml(formatter);
@@ -981,12 +980,6 @@
                 if (evt.button == 2)return;
                 me._selectionChange(250, evt);
             });
-            domUtils.on(doc, ['input'], function(e) {
-                var reg = /(?:[\xA9\xAE\u2122\u23E9-\u23EF\u23F3\u23F8-\u23FA\u24C2\u25B6\u2600-\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDE51\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F\uDE80-\uDEFF]|\uD83E[\uDD00-\uDDFF])/g;
-                if (e.data && reg.test(e.data)){
-                    me.fireEvent('contentchange');
-                }
-            });
         },
         /**
          * 触发事件代理
@@ -1073,7 +1066,6 @@
          * @return { * } 返回命令函数运行的返回值
          */
         _callCmdFn: function (fnName, args) {
-            if (!this.commands) return 0
             var cmdName = args[0].toLowerCase(),
                 cmd, cmdFn;
             cmd = this.commands[cmdName] || UE.commands[cmdName];
@@ -1388,7 +1380,6 @@
          * ```
          */
         getLang: function (path) {
-            if(!this.options) return
             var lang = UE.I18N[this.options.lang];
             if (!lang) {
                 throw Error("not import language file");

@@ -35,7 +35,7 @@
         });
 
         function showErrorMsg(msg) {
-            console && msg && console.error(msg);
+            console && console.error(msg);
             //me.fireEvent('showMessage', {
             //    'title': msg,
             //    'type': 'error'
