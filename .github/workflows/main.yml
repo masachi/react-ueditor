@@ -29,5 +29,5 @@ jobs:
     - name: Sync Lib to Gitee
       run: |
          git remote set-url origin https://masachi:${{ secrets.GITEE_ACCESS_TOKEN }}@gitee.com/masachi/react-ueditor.git
-         git fetch --unshallow
+         git fetch --unshallow origin
          git push -f origin v1.1.2
