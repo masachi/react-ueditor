@@ -21,7 +21,11 @@ jobs:
       run: npm run build
     - name: Push lib to master
       run: |
-        git config --global user.name 'masachi'
-        git config --global user.email 'zhangjb42@gmail.com'
+        git config --local user.name 'masachi'
+        git config --local user.email 'zhangjb42@gmail.com'
         git commit -am "Build fresh lib with Github Actions"
         git push origin v1.1.2
+    - name: Sync Lib to Gitee
+       run: |
+         git remote set-url origin https://x-access-token:${{ secrets.GITEE_ACCESS_TOKEN }}@gitee.com/masachi/react-ueditor
+         git push -f origin master
