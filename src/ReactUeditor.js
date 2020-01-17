@@ -381,7 +381,7 @@ class ReactUeditor extends React.Component {
           id={this.fileInputID}
           onChange={this.uploadImage}
           style={{visibility: 'hidden', width: 0, height: 0, margin: 0, padding: 0, fontSize: 0}}
-          multiple={multipleImagesUpload} />
+          multiple={multipleImagesUpload} accept="image/*" />
         {
           this.state.pluginsWithCustomRender.map(plugin => {
             const visible = !!this.state[this.getVisibleName(plugin.name)]
